@@ -1,5 +1,3 @@
-package POO.aula1;
-
 import java.util.Scanner;
 
 class Media 

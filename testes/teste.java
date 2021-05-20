@@ -1,4 +1,3 @@
-package POO.testes;
 class A
 {
     public static void main(String args[]){
