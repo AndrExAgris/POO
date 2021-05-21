@@ -5,7 +5,7 @@ class Primeiro
     public static void main(String[] args) 
     {
         Scanner s = new Scanner(System.in);
-        int tam, soma = 0, menor=1000000, maior=0, primesum=0, aux=0;
+        int tam, soma = 0, menor=1000000, maior=0, primesum=0;
         double media;
 
         System.out.println("Digite o tamanho do vetor com um valor inteiro:");
@@ -37,13 +37,20 @@ class Primeiro
 
         for(int i=0; i<tam; i++)
         {
-            for (int j = 2; j < vetor[i]; j++) {
-                if (vetor[i] % j == 0){
-                    aux++;
-                }else{
-                    primesum+=vetor[i];
+            if(vetor[i]>0)
+            {
+                int aux=0;
+                for(int j = 2; j < vetor[i]; j++) 
+                {
+                    if (vetor[i] % j == 0){
+                        aux++;
+                    }
                 }
-            }//soma numeros primos
+                if(aux==0){
+                    primesum+=vetor[i];
+                }//soma numeros primos
+            }   
+            
         }
         System.out.println("A soma dos elementos primos do vetor é: "+primesum);
         
