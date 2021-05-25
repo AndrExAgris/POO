@@ -1,8 +1,10 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class exer2 {
+public class Segundo 
+{
     public static void main(String[] args) 
+
     {
         Scanner s = new Scanner(System.in);
         Random r = new Random();
