@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Segundo 
+class Segundo 
 {
     public static void main(String[] args) 
 
@@ -82,5 +82,6 @@ public class Segundo
             System.out.println();
         }
 
-    }    
+        s.close();
+    }
 }
