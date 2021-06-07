@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-class Segundo 
+class exer2 
 {
     public static void main(String[] args) 
 
@@ -11,7 +11,7 @@ class Segundo
         int n, m;
 
 
-        System.out.println("Digite os dois valores:");
+        System.out.println("Digite os valores do tamanho do vetor:");
         n = s.nextInt();
         m = s.nextInt();
 

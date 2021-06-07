@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Primeiro
+class exer1
 {
     public static void main(String[] args) 
     {
