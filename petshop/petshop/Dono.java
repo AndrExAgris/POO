@@ -1,5 +1,3 @@
-package petshop;
-
 public class Dono 
 {    
     private String nome;

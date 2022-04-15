@@ -1,12 +1,11 @@
-package petshop;
 
 public class Veterinario 
 {
     private String nome;
     private float salario;
     private Endereco endereco;
-    private int quantidadeAnimais = 0;
-    private Animal[] animais = new Animal[quantidadeAnimais];
+    private int quantidadeAnimais;
+    private Animal[] animais = new Animal[10];
        
     public Veterinario(){}
 

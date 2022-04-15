@@ -1,6 +1,6 @@
 package imc;
 
-public class Main 
+public class Main
 {
     public static void main(String[] args) {
         
@@ -43,7 +43,7 @@ public class Main
         g.setPessoa(p5);
 
         g.ordena();
-
+        
         for(int i=0; i<5; i++){
             System.out.println("Nome: "+ g.getPessoas()[i].getNome());
             System.out.println("Altura: "+ g.getPessoas()[i].getAltura());
@@ -56,3 +56,4 @@ public class Main
 
     }
 }
+ 

@@ -1,4 +1,3 @@
-package petshop;
 import java.util.Scanner;
 
 public class SistemaPetshop 
