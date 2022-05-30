@@ -1,0 +1,146 @@
+import java.util.concurrent.TimeUnit;
+
+
+
+public static void main(String[] args) throws InterruptedException {
+
+        int opcao1 = -1;
+
+        while(opcao1 != 0){
+
+            //Sistema.clearScreen();
+            System.out.println("Escolha uma opção:");
+            System.out.println("1 - Criar conta");
+            System.out.println("2 - Login");
+            System.out.println("0 - Sair");
+
+            opcao1 = s.nextInt();
+            String nome = "a";
+            //Sistema.clearScreen();
+
+            switch(opcao1){
+
+                case 0:
+                    break;
+                
+                case 1:
+                    System.out.println("Digite um nome de usuario:");
+                    nome = s.next();
+                    if(Sistema.existeUsuario(nome)){
+                        System.out.println("Esse usuario ja existe");
+                        TimeUnit.SECONDS.sleep(1);
+                        break;
+                    }else{
+                        System.out.println("Digite a Senha:");
+                        String senha = s.next();
+                        Usuario usuario = new Usuario();
+                        usuario.setNome(nome);
+                        usuario.setSenha(senha);
+                        Sistema.cadastro(usuario);
+                        break;
+                    }
+                case 2:
+                    System.out.println("Digite seu nome de usuario:");
+                    nome = s.next();
+                    if(Sistema.existeUsuario(nome)){  
+                        System.out.println("Digite a Senha:");
+                        String senha = s.next();
+                        if(Sistema.login(nome, senha)){
+                            System.out.println("Bem vindo "+nome+"!");
+                            TimeUnit.SECONDS.sleep(1);
+
+                            int opcao2 = -1;
+
+                            while(opcao2 != 0){
+
+                                opcao2 = -1;
+
+                                //Sistema.clearScreen();
+                                System.out.println("Escolha uma opção, "+nome+":");
+                                System.out.println("1 - Enviar email");
+                                System.out.println("2 - Ver emails");
+                                System.out.println("0 - Sair");
+                                opcao2 = s.nextInt();
+                                //Sistema.clearScreen();
+
+                                switch(opcao2){
+                                    case 0:
+                                        break;
+                                    case 1:
+                                        Email email = new Email();
+
+                                        email.setRemetente(nome);
+
+                                        System.out.println("Para:");
+
+                                        String destinatario = s.next();
+                                        if(nome != destinatario){
+                                            if(Sistema.existeUsuario(destinatario)){
+                                                email.setDestinatario(destinatario);
+                                            }else{
+                                                System.out.println("Esse destinatario não existe!");
+                                                TimeUnit.SECONDS.sleep(1);
+                                                break;
+                                            }
+                                        }else{
+                                            System.out.println("Você não pode mandar uma mensagem para si mesmo!");
+                                            TimeUnit.SECONDS.sleep(1);
+                                            break;
+                                        }
+
+                                        System.out.println("");
+
+                                        System.out.println("Assunto:");
+                                        email.setTitulo(s.next());
+
+                                        System.out.println("");
+
+                                        System.out.println("Mensagem:");
+                                        email.setConteudo(s.next());
+
+                                        System.out.println("");
+
+                                        Sistema.enviaMensagem(email);
+                                        break;
+
+                                    case 2:                                           
+                                        int opcao3 = -1;
+                                        
+                                        while(opcao3 != 0){
+                                            opcao3 = -1;
+
+                                            Sistema.mostraMensagens(nome);
+                                            System.out.println("");
+                                        
+                                            System.out.println("Opções:");
+                                            System.out.println("1 (n° do email) - Ler email");
+                                            System.out.println("2 (n° do email) - Excluir email");
+                                            System.out.println("0 - Sair");
+
+                                            opcao3 = s.nextInt();
+
+                                            switch(opcao3){
+                                                case 0:
+                                                    break;
+
+                                                case 1:
+
+                                                case 2:
+
+                                            }
+                                        }                     
+                                }
+                            }
+                        }else{
+                            System.out.println("Senha incorreta");
+                            TimeUnit.SECONDS.sleep(1);
+                            break;
+                        }   
+                    }else{
+                        System.out.println("Esse usuario não existe");
+                        TimeUnit.SECONDS.sleep(1);
+                        break;
+                    }
+            }
+        }
+    }
