@@ -1,0 +1,37 @@
+Resposta: 
+
+public class Inversor {
+
+    public static String inverterString(String texto) {
+
+    char []letras = texto.toCharArray();
+    char []invertido = new char[letras.length]; <<<--- o erro estava aqui
+    //
+    int index = letras.length - 1;
+    for(char letra : letras) {
+        invertido[index] = letra;
+        index--;
+    }
+
+    return new String(invertido);
+    }
+}
+
+Porque ele estava criando um vetor menor que o necessario para receber o
+novo array de caracteres, então quando passava do seu limite de tamanho
+o codigo retorna um erro.
+
+----------------------------------------------------------------------------
+
+a) O erro retornado foi: 
+ 
+Exception in thread "main" java.lang.NullPointerException
+        at Inversor.inverterString(Inversor.java:5)
+        at Main.main(Main.java:6)
+
+erro que ocorre na linha 5(do codigo executado) que é:
+
+    char []letras = texto.toCharArray();
+
+Ja que não havina nenhuma string, ou melhor uma string nula, ela não pode
+ser convertida para caracteres que não possuia, dai o erro.
