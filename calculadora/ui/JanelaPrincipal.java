@@ -26,12 +26,12 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
     }
     private void iniciarLayout(){
         visor.setEditable(false);
-        visor.setBackground(Color.ORANGE);
+        visor.setBackground(Color.GRAY);
         visor.setHorizontalAlignment(JTextField.RIGHT);
-        
+
         add(visor, BorderLayout.NORTH);
         JPanel panel = new JPanel();
-        panel.setBackground(Color.GRAY);
+        panel.setBackground(Color.BLACK);
         panel.setLayout(new GridLayout(6,3));
 
         JButton b0 = new JButton("0");
@@ -45,38 +45,38 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
         JButton b8 = new JButton("8");
         JButton b9 = new JButton("9");
         JButton btIgual = new JButton("=");
-        btIgual.setBackground(Color.yellow);
+        btIgual.setBackground(Color.GREEN);
         JButton btMais = new JButton("+");
-        btMais.setBackground(Color.GREEN);
+        btMais.setBackground(Color.GRAY);
         JButton btMenos = new JButton("-");
-        btMenos.setBackground(Color.GREEN);
+        btMenos.setBackground(Color.GRAY);
         JButton btDividir = new JButton("/");
-        btDividir.setBackground(Color.GREEN);
+        btDividir.setBackground(Color.GRAY);
         JButton btMultiplicar = new JButton("*");
-        btMultiplicar.setBackground(Color.GREEN);
+        btMultiplicar.setBackground(Color.GRAY);
         JButton btPonto = new JButton(".");
-        btPonto.setBackground(Color.GREEN);
+        btPonto.setBackground(Color.GRAY);
         JButton btLimpar = new JButton("CE");
-        btLimpar.setBackground(Color.yellow);
+        btLimpar.setBackground(Color.RED);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        panel.add(b0);
-        panel.add(b1);
-        panel.add(b2);
-        panel.add(b3);
-        panel.add(b4);
-        panel.add(b5);
-        panel.add(b6);
         panel.add(b7);
         panel.add(b8);
         panel.add(b9);
-        panel.add(btIgual);
+        panel.add(b4);
+        panel.add(b5);
+        panel.add(b6);
+        panel.add(b1);
+        panel.add(b2);
+        panel.add(b3);
+        panel.add(b0);
+        panel.add(btPonto);
         panel.add(btMais);
         panel.add(btMenos);
         panel.add(btDividir);
         panel.add(btMultiplicar);
-        panel.add(btPonto);
+        panel.add(btIgual);
         panel.add(btLimpar);
         add(panel, BorderLayout.CENTER);
 

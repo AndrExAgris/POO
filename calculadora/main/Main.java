@@ -7,6 +7,6 @@ public class Main {
     public static void main(String[] args) {
 
         JanelaPrincipal janela = new JanelaPrincipal();
-        janela.setSize(500,500);
+        janela.setSize(5000,5000);
     }
 }
